@@ -7,7 +7,7 @@ import streamlit as st
 
 
 # Gerar DataFrame com o conteúdo dos arquivos
-def carregar_linhas_para_df(caminho_arquivo, nome_coluna="linha", encoding="latin1"):
+def carregar_linhas_para_df(caminho_arquivo, nome_coluna="linha", encoding="utf-8"):
     """
     Lê um arquivo TXT ou TXT.GZ linha a linha
     e retorna um DataFrame com uma única coluna.
