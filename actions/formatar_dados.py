@@ -29,7 +29,7 @@ def carregar_linhas_para_df(caminho_arquivo, nome_coluna="linha", encoding="lati
     return df
 
 
-def configurar_arquivos_extrator(arquivo, tipo_arquivo):
+def configurar_arquivos_extrator(arquivo, tipo_arquivo, encoding="utf-8"):
     
     '''
         arquivo: Recebe o caminho ou a refeência do arquivo.
@@ -46,7 +46,7 @@ def configurar_arquivos_extrator(arquivo, tipo_arquivo):
         case "layout":
             # Abrindo e tratando o conteúdo do arquivo
             try:
-                df_layout = carregar_linhas_para_df(arquivo, nome_coluna="colunas_layout", encoding="latin1")
+                df_layout = carregar_linhas_para_df(arquivo, nome_coluna="colunas_layout", encoding=encoding)
                 if df_layout.empty:
                     st.warning("Arquivo lido, mas está vazio.")
                 else:
@@ -61,7 +61,7 @@ def configurar_arquivos_extrator(arquivo, tipo_arquivo):
         case "dados":
             # Abrindo e tratando o conteúdo do arquivo
             try:
-                df_dados = carregar_linhas_para_df(arquivo, nome_coluna="dados_extraidos", encoding="latin1")
+                df_dados = carregar_linhas_para_df(arquivo, nome_coluna="dados_extraidos", encoding=encoding)
                 if df_dados.empty:
                     st.warning("Arquivo lido, mas está vazio.")
                 else:
