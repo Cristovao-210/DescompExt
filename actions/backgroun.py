@@ -19,7 +19,7 @@ def baixar_df(df: pd.DataFrame, formato: str, estilo_html: str):
         nome_arquivo = "dados.csv"
 
     elif formato == "json":
-        data = df.to_json(orient="records", force_ascii=False).encode("latin1")
+        data = df.to_json(orient="records", force_ascii=False).encode("utf-8")
         mime = "application/json"
         nome_arquivo = "dados.json"
 
